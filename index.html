@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chevalier Barbier · Reservas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <span class="orb o1"></span>
+    <span class="orb o2"></span>
+    <span class="orb o3"></span>
+  </div>
+
+  <main class="app">
+
+    <!-- PANTALLA 1: Inicio con foto del local -->
+    <section class="screen is-visible" id="pantalla-1">
+      <div class="inicio">
+        <h1>Chevalier Barbier</h1>
+        <button class="btn btn-primary" type="button" data-go="pantalla-2">Agenda tu cita →</button>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: Paso 1 · Barberos (carrusel automático) -->
+    <section class="screen" id="pantalla-2">
+      <header class="titulo-paso">
+        <h2>Paso 1. Escoge a tu barbero</h2>
+      </header>
+
+      <div class="carrusel" id="carrusel">
+        <div class="track" id="track-barberos">
+          <article class="card barbero" data-id="b1"><div class="ph">Foto</div><h3>Barbero 1</h3></article>
+          <article class="card barbero" data-id="b2"><div class="ph">Foto</div><h3>Barbero 2</h3></article>
+          <article class="card barbero" data-id="b3"><div class="ph">Foto</div><h3>Barbero 3</h3></article>
+        </div>
+      </div>
+
+      <footer class="acciones">
+        <button class="btn btn-ghost" type="button" data-go="pantalla-1">Volver</button>
+        <button class="btn btn-primary" type="button" id="siguiente-2" data-go="pantalla-3" disabled>Siguiente →</button>
+      </footer>
+    </section>
+
+    <!-- PANTALLA 3: Paso 2 · Servicios (cuadrícula fija) -->
+    <section class="screen" id="pantalla-3">
+      <header class="titulo-paso">
+        <h2>Paso 2. Escoge el servicio que desees</h2>
+      </header>
+
+      <div class="grid-servicios">
+        <article class="card servicio" data-id="corte"><div class="ph">Imagen</div><h3>Servicio de corte</h3></article>
+        <article class="card servicio" data-id="barba"><div class="ph">Imagen</div><h3>Barba</h3></article>
+        <article class="card servicio" data-id="completo"><div class="ph">Imagen</div><h3>Servicio completo</h3></article>
+      </div>
+
+      <footer class="acciones">
+        <button class="btn btn-ghost" type="button" data-go="pantalla-2">Volver</button>
+        <button class="btn btn-primary" type="button" data-go="pantalla-4">Siguiente →</button>
+      </footer>
+    </section>
+
+    <!-- PANTALLA 4: Paso 3 · Fecha y hora -->
+    <section class="screen" id="pantalla-4">
+      <header class="titulo-paso">
+        <h2>Paso 3. Escoge fecha y hora</h2>
+      </header>
+
+      <div class="fecha-hora">
+        <div class="cal">
+          <h3>Octubre 2026</h3>
+          <div class="cal-grid" id="calendario"></div>
+        </div>
+        <div class="slots">
+          <h3>Horarios disponibles</h3>
+          <div class="slots-grid" id="horarios"></div>
+        </div>
+      </div>
+
+      <footer class="acciones">
+        <button class="btn btn-ghost" type="button" data-go="pantalla-3">Volver</button>
+        <button class="btn btn-primary" type="button" id="confirmar">Confirmar Reserva</button>
+      </footer>
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
